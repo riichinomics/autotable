@@ -65,7 +65,7 @@ export const GAME_TYPES: Record<GameType, GameTypeMeta> = {
   WASHIZU: { points: '25', seats: [0, 1, 2, 3] },
 };
 
-export type Points = '25' | '30' | '35' | '40' | '100';
+export type Points = '5' | '8' | '25' | '30' | '35' | '40' | '100';
 
 export interface Conditions {
   gameType: GameType;
