@@ -178,9 +178,11 @@ export class GameUi {
           continue;
         }
 
-        this.elements.spectators.insertAdjacentHTML("beforeend", `
-          <div class="mt-2 badge badge-success w-100 py-2" data-spectator-id="${key}">${value}</div>
-        `);
+        const spectatorName = document.createElement('div');
+        spectatorName.className = "mt-2 badge badge-success w-100 py-2";
+        spectatorName.dataset.spectatorId = key;
+        spectatorName.innerText = value;
+        this.elements.spectators.insertAdjacentElement('beforeend', spectatorName);
       }
       this.isSpectating = this.client.spectators.get(this.client.playerId()) !== null;
       this.spectatorOverlay.setEnabled(this.isSpectating);
